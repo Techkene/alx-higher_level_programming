@@ -1,4 +1,5 @@
 #include "list.h"
+#include <stdio.h>
 /**
   *check_cycle - checks to see if a cycle exists in a linked list
   *@list: start of linked list
@@ -7,15 +8,16 @@
 
 int check_cycle(listint_t *list)
 {
-        listint_t *cycle, *cycle2;
-        cycle = list;
-        cycle2 = list;
+        listint_t *cursor;
+        listint_t *head;
+        head  = list
+        cursor = list
 
-        while (cycle && cycle2 && cycle2->next)
+        while (cursor != NULL && cursor->next != NULL)
         {
-                cycle = cycle->next;
-                cycle2 = cycle2->next->next;
-                if(cycle == cycle2)
+                head = head->next;
+                cursor = cursor->next->next;
+                if(head == cursor)
                         return (1);
         }
         return (0);
